@@ -13,6 +13,8 @@ The system is modeled as a closed-loop feedback system with the following subsys
 * **Generator**: $G_{gen}(s) = \frac{1}{s + 1}$ with gain $k_g = 1$ and time constant $\tau_g = 1$ s.
 * **Sensor**: $G_S(s) = \frac{1}{0.01s + 1}$ with gain $k_s = 1$ and time constant $\tau_s = 0.01$ s.
 
+![AVR Control System Model](Simulink-Model/Uncompensated-Block-Diagram.png)
+
 ## **Performance Comparison**
 The following table summarizes the response criteria before and after applying the Lag-Lead compensation:
 
@@ -23,7 +25,14 @@ The following table summarizes the response criteria before and after applying t
 | **Overshoot (%OS)** | 65.2% | 2.7349% |
 | **Steady State Error (ess)** | 0.0907 | 0.0476 |
 
+# Compensated Block Diagram
+
+![AVR Control System Model](Simulink-Model/Compensated-Block-Diagram.png)
+
 ## **Digital Control (Discrete-Time Analysis)**
+
+![AVR Control System Model](Simulink-Model/Discrete-Block-Diagram.png)
+
 The system was discretized using the **Zero-Order Hold (ZOH)** method with a sampling time ($T_s$) of **0.01 s** to evaluate digital control performance.
 
 * **Stability Range**: The discrete system remains stable within the range of $0.0010 \text{ s} \le T_s \le 0.1610 \text{ s}$.
